@@ -1,0 +1,27 @@
+ int longestCommonSum(bool arr1[], bool arr2[], int n) {
+            // code here 
+            int aux[n];
+            for(int i=0;i<n;i++)
+            {
+                aux[i]=arr1[i]-arr2[i];
+            }
+            unordered_map <int,int> m;
+            int pre_sum=0 , max_subarray=0;
+            for(int i=0;i<n;i++)
+            {
+                pre_sum +=aux[i];
+                if(pre_sum==0)
+                {
+                    if(max_subarray< i+1)
+                    max_subarray=i+1;
+                }
+                else if(m.find(pre_sum) != m.end())
+                {
+                    if(max_subarray<i-m[pre_sum]) 
+                    max_subarray=i-m[pre_sum];
+                }
+                else
+                m[pre_sum]=i;
+            }
+            return max_subarray;
+    }
