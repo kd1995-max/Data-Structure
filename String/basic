@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	char str1[]="rashmi";
+	char str2[]="gfg ide";
+	cout<<str1<<endl;
+	cout<<sizeof(str1)<<endl;
+	cout<<str2<<endl;
+	cout<<sizeof(str2)<<endl;
+	char str3[]={'g','f','g','\0'}; //if we not give \0 then it gives garbage value
+	cout<<str3<<" ";
+	cout<<sizeof(str3)<<endl;;
+	char str4[8];
+	strcpy(str4,"rashmi");//assign string to array
+	cout<<str4;
+	return 0;
+}
