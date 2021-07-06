@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	char s1[]="abc";
+	char s2[]="bcd";
+	if(s1==s2)
+		cout<<"same";
+	else if(s1<s2)
+		cout<<"smaller";
+	else
+		cout<<"greater";
+	return 0;
+}
+//output-->>smaller
