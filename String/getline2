@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+    string str;
+    cout << "Enter your name";
+    getline(cin, str, 'a');
+    cout << "\nYour name is " << str;
+	return 0;
+}
+
+output-->>
+/*rashmi bharti
+
+Enter your name
+Your name is r */
