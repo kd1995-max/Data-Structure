@@ -24,7 +24,7 @@ public:
 		while(!s.empty() && heights[s.top()]>=heights[i])
 		s.pop();
 		int grt=s.empty()?heights.size():s.top();
-		left[i]=grt;
+		right[i]=grt;
 		s.push(i);
 	}
 
