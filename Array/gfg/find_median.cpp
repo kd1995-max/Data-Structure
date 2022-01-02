@@ -12,6 +12,6 @@
 		    {
 		        res=((v[n/2])+(v[n/2-1]))/2;
 		    }
-		   // res=v[res];
+		   
 		    return res;
 		}
