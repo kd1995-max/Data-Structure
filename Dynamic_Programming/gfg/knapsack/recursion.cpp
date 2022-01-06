@@ -1,17 +1,17 @@
-   int dp[1001][1001];
+  int memo[1001][1001];
    
    int solve(int wt[],int val[],int w,int n)
    {
        if(n==0 ||w==0)
        return 0;
       
-       if(dp[n][w] !=-1)
-       return dp[n][w];
+       if(memo[n][w] !=-1)
+       return memo[n][w];
        
        if(wt[n-1]<=w)
-       return  dp[n][w]=max(val[n-1]+solve(wt,val,w-wt[n-1],n-1),solve(wt,val,w,n-1));
+       return  memo[n][w]=max(val[n-1]+solve(wt,val,w-wt[n-1],n-1),solve(wt,val,w,n-1));
        else if(wt[n-1] >w)
-       return dp[n][w]=solve(wt,val,w,n-1);
+       return memo[n][w]=solve(wt,val,w,n-1);
        
    }
    
@@ -20,6 +20,6 @@
     { 
        // Your code here
        
-      memset(dp,-1,sizeof(dp));
+      memset(memo,-1,sizeof(memo));
       return solve(wt,val,W,n);
     }
