@@ -22,11 +22,11 @@ class Solution {
 				}
 			}
 			int i=n,j=m;
-			while(i>0 && j>0)  // i or j =0 , then string empty
+			while(i>0 && j>0)  // if any of this i and j becomes 0 means one string is empty 
 			{
 				if(str1[i-1]==str2[j-1])
 				{
-					s += str[i-1];    //matches then add result string and move digonally up
+					s += str[i-1];    //if character matches then add that to result string and move diagonally up
 					i--;
 					j--;
 				}
@@ -38,7 +38,7 @@ class Solution {
 					i--;
 				}
 			}
-			reverse(s.begin(),s.end());
+			reverse(s.begin(),s.end());  //reverse the string as we started from last
 			cout<<s;
 			return dp[n][m];
 	}
