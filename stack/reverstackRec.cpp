@@ -1,9 +1,6 @@
 #include<bits/stdc++.h>
-
 using namespace std;
-
 stack<int> st;
-
 void insert_at_bottom(int x)
 {
     if(st.empty())
