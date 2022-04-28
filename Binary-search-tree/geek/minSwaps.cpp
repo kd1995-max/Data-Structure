@@ -4,8 +4,7 @@
 using namespace std;
 
 // Inorder Traversal of Binary Tree
-void inorder(int a[], std::vector<int> &v,
-						int n, int index)
+void inorder(int a[], std::vector<int> &v,int n, int index)
 {
 	// if index is greater or equal to vector size
 	if(index >= n)
