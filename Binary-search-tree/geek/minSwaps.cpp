@@ -1,54 +1,47 @@
-// C++ program for Minimum swap required
-// to convert binary tree to binary search tree
 #include<bits/stdc++.h>
 using namespace std;
 
-// Inorder Traversal of Binary Tree
-void inorder(int a[], std::vector<int> &v,int n, int index)
+void inorder(int arr[], vector<int> & vec ,int n,int index)
 {
-	// if index is greater or equal to vector size
-	if(index >= n)
-		return;
-	inorder(a, v, n, 2 * index + 1);
-	
-	// push elements in vector
-	v.push_back(a[index]);
-	inorder(a, v, n, 2 * index + 2);
+	if(index >=n)
+	return;
+	inorder(arr,vec,n,2*index+1);
+	vec.push_back(arr[index]);
+	inorder(arr,vec,n,2*index+2);
+
 }
 
-// Function to find minimum swaps to sort an array
-int minSwaps(std::vector<int> &v)
+int minswap(vector<int> &vec)
 {
-	std::vector<pair<int,int> > t(v.size());
-	int ans = 0;
-	for(int i = 0; i < v.size(); i++)
-		t[i].first = v[i], t[i].second = i;
-	
-	sort(t.begin(), t.end());
-	for(int i = 0; i < t.size(); i++)
+	vector<pair<int,int>>vp(vec.size());
+	int res=0;
+	for(int i=0;i<vp.size();i++)
 	{
-		// second element is equal to i
-		if(i == t[i].second)
+	vp[i].first=vec[i],vp[i].second=i;
+	}
+	sort(vp.begin(),vp.end());
+
+	for(int i=0;i<vp.size();i++)
+	{
+		if(i==vp[i].second)
 			continue;
 		else
 		{
-			// swaping of elements
-            swap(t[i] , t[t[i].second]);
+		swap(vp[i],vp[vp[i].second]);
 		}
-		
-		// Second is not equal to i
-		if(i != t[i].second)
+		if(i != vp[i].second)
 			--i;
-		ans++;
+		res++;
 	}
-	return ans;
+	return res;
 }
-
 int main()
 {
-	int a[] = { 5, 6, 7, 8, 9, 10, 11 };
-	int n = sizeof(a) / sizeof(a[0]);
-	std::vector<int> v;
-	inorder(a, v, n, 0);
-	cout << minSwaps(v) << endl;
+	int arr[]={5,6,7,8,9,10,11};
+	int n=sizeof(arr)/sizeof(arr[0]);
+	vector<int> vec;
+	inorder(arr,vec,n,0);
+	cout<<minswap(vec)<<endl;
 }
+
+//3
