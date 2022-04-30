@@ -1,4 +1,4 @@
- int .(Node *root, bool& flag)
+int checkLevel(Node *root, bool& flag)
     {
         
         if(!root)
