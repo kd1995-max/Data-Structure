@@ -1,4 +1,4 @@
-   Node* mergeSort(Node* head) {
+  Node* mergeSort(Node* head) {
         // your code here
         vector<int>vec;
         Node* curr = head;
@@ -12,19 +12,19 @@
         sort(vec.begin(),vec.end());
     
         Node *newNode = NULL;  
-        Node *ptr = NULL;
+        Node *temp = NULL;
         
         for(auto a : vec)
         {
             if(!newNode)
             {
                 newNode = new Node(a);
-                ptr = newNode;
+                temp = newNode;
             }
             else
             {
-                ptr->next = new Node(a);
-                ptr = ptr->next;
+                temp->next = new Node(a);
+                temp = temp->next;
             }
         }
         
