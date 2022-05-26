@@ -33,3 +33,27 @@ ListNode* swapNodes(ListNode* head, int k) {
         
         return newNode;
     }
+
+// method 2:
+   ListNode* swapNodes(ListNode* head, int k) {
+        ListNode *slow=head;
+        ListNode *fast=head;
+        ListNode *temp=head;
+        for(int i=0;i<k;i++)
+        {
+            fast=fast->next;
+        }
+        
+        while(fast!= NULL)
+        {
+           fast=fast->next; 
+           slow=slow->next;
+        }
+        for(int i=1;i<k;i++)
+        {
+           temp=temp->next; 
+        }
+        swap(slow->val,temp->val);
+        return head;
+       
+    }
