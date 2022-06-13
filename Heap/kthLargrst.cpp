@@ -17,3 +17,19 @@
             return p.top();
             
         }
+-----------------
+ int KthLargest(int arr[], int n, int k) {
+        // Your code here
+        
+        priority_queue<int>pq(arr,arr+n);
+        
+        for(int i=1;i<=n;i++)
+        {
+            if(i == k)
+            return pq.top();
+            
+            pq.pop();
+        }
+        
+        return -1;
+    }
