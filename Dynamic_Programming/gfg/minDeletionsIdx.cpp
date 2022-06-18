@@ -1,3 +1,24 @@
+method 1 :-
+	
+int minDeletions(int arr[], int n) 
+	{ 
+	    // Your code goes here
+	    int lis[n];
+	    lis[0]=1;
+	    for(int i=1;i<n;i++)
+	    {
+	        lis[i]=1;
+	        for(int j=0;j<i;j++)
+	        {
+	          if(arr[i]>arr[j])
+	          lis[i]=max(lis[j]+1,lis[i]);
+	        }
+	    }
+	    int res=*max_element(lis,lis+n);
+	    return n - res;
+	} 
+
+method 2 :-
 int findIDX(int tail[], int n, int l , int r,int key)
 	{
 	   while (r > l) {         
