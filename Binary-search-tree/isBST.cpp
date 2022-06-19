@@ -1,4 +1,35 @@
- int prevv = INT_MIN;
+method 1:-
+   int prevv = INT_MIN;
+    bool isBST_(Node* root)
+    {
+        if(root == NULL)
+        return true;
+        
+        bool flag = isBST(root->left);
+        
+        
+        
+        if(flag == false) 
+        return false;
+        
+        if(root->data <= prevv) 
+        return false;
+        
+        prevv = root->data;
+        
+        
+        
+        return isBST_(root->right);
+    }
+    
+    bool isBST(Node* root) 
+    {
+        // You(r code here
+        return isBST_(root);
+    }
+or---------
+
+int prevv = INT_MIN;
     bool isBST_(Node* root)
     {
         if(root == NULL)
