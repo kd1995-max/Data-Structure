@@ -1,14 +1,14 @@
 int findMaxConsecutiveOnes(vector<int>& nums) {
-         int count=0;
-        int max_count=0;
+        int c=0;
+        int res=0;
         for(int i=0;i<nums.size();i++)
         {
-           if(nums[i]==1)
-               count++;
+            if(nums[i]==1)
+                c++;
             else
-                count=0;
-            max_count=max(max_count,count);
+                c=0;
+            res=max(res,c);
         }
-        return max_count;
+        return res;
         
     }
