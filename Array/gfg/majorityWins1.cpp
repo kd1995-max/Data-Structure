@@ -1,19 +1,16 @@
-int majorityWins(int arr[], int n, int x, int y) {
- 
-    // code here
-
-   int count_x = 0 , count_y = 0;
+ int majorityWins(int arr[], int n, int x, int y) {
+        // code here
+        int c1 = 0 , c2 = 0;
     for(int i = 0; i < n; i++)
     {
         if(arr[i] == x)
-        count_x++;
+        c1++;
         else if(arr[i] == y)
-        count_y++;
+        c2++;
     }
     int res;
-    if(count_x != count_y)
-    return (count_x > count_y)? x : y;
+    if(c1 != c2)
+    return (c1 > c2)? x : y;
     else
-    return (x < y)? x : y;
-    
-}
+    return (x < y)? x : y;     
+    }
