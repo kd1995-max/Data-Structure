@@ -1,16 +1,12 @@
  vector<int> bfsOfGraph(int v, vector<int> adj[]) {
         // Code here
-        bool visited[v+1];
-       
-        memset(visited,false,sizeof(visited));
-        
+       bool visited[v+1];
+       memset(visited,false,sizeof(visited));
        queue<int> q;
        visited[0]=true;
        q.push(0);
-       
        vector<int>vec;
-       
-       while(!q.empty())
+        while(!q.empty())
        {
            int u=q.front();
            q.pop();
@@ -26,5 +22,4 @@
            }
        }
        return vec;
-        
-    }
+   }
